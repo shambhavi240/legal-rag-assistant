@@ -1,0 +1,14 @@
+streamlit
+requests
+langchain
+langchain-community
+langchain-core
+langchain-groq
+chromadb
+pypdf
+sentence-transformers
+faiss-cpu
+fastapi
+uvicorn
+python-dotenv
+tiktoken
