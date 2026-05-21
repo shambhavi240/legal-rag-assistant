@@ -205,7 +205,7 @@ if uploaded_file:
             with st.spinner("Thinking..."):
                 try:
                     api_response = requests.post(
-                        "http://127.0.0.1:8000/chat",
+                        "https://bankroll-degree-storeroom.ngrok-free.dev/chat",
                         json={"question": prompt},
                         timeout=30
                     )
