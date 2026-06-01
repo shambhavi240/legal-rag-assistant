@@ -205,11 +205,10 @@ if uploaded_file:
             with st.spinner("Thinking..."):
                 try:
                     api_response = requests.post(
-                        requests.post(
-                            "https://legal-rag-assistant-h7k0.onrender.com/chat",
-                        json={"question": prompt},
-                        timeout=30
-                    )
+    "https://legal-rag-assistant-h7k0.onrender.com/chat",
+    json={"question": prompt},
+    timeout=30
+)
                     # FIXED: Changed from raise_for_error() to raise_for_status()
                     api_response.raise_for_status() 
                     response = api_response.json().get("response", "No clear answer received.")
