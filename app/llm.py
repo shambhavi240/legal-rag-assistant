@@ -4,10 +4,9 @@ import streamlit as st
 
 from dotenv import load_dotenv
 
-from langchain_groq import ChatGroq
-
-
 load_dotenv()
+
+from langchain_groq import ChatGroq
 
 
 @st.cache_resource
