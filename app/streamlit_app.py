@@ -251,7 +251,7 @@ if uploaded_file:
             with st.spinner("Analyzing risks..."):
                 try:
                     api_response = requests.post(
-                        "http://127.0.0.1:8000/chat",
+                        "https://legal-rag-assistant-h7k0.onrender.com/chat",
                         json={"question": risk_prompt}
                     )
                     risk_response = api_response.json()["response"]
