@@ -207,7 +207,7 @@ if uploaded_file:
                     api_response = requests.post(
     "https://legal-rag-assistant-h7k0.onrender.com/chat",
     json={"question": prompt},
-    timeout=30
+    timeout=120
 )
                     # FIXED: Changed from raise_for_error() to raise_for_status()
                     api_response.raise_for_status() 
