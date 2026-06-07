@@ -399,7 +399,7 @@ Provide clean bullet points.
 """
 
                         api_response = requests.post(
-                            "http://127.0.0.1:8000/chat",
+                            "https://legal-rag-assistant-1-yokm.onrender.com/chat",
                             json={"question": comparison_prompt}
                         )
 
