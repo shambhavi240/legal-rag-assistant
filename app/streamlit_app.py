@@ -278,7 +278,7 @@ if uploaded_file:
             with st.spinner("Generating summary..."):
                 try:
                     api_response = requests.post(
-                        "http://127.0.0.1:8000/chat",
+                        "https://legal-rag-assistant-1-yokm.onrender.com",
                         json={"question": summary_prompt}
                     )
                     summary_response = api_response.json()["response"]
