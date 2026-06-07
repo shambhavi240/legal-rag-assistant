@@ -7,7 +7,6 @@ import streamlit as st
 from langchain_community.document_loaders import PyPDFLoader
 import shutil
 # Custom module imports
-from risk_score import build_risk_score_prompt
 from summarizer import build_summary_prompt
 from text_splitter import split_text
 from embeddings import get_embedding_model
@@ -115,11 +114,19 @@ st.sidebar.markdown(
 # SESSION STATE INITIALIZATION
 if "messages" not in st.session_state:
     st.session_state.messages = []
+if "current_pdf" not in st.session_state:
+    st.session_state.current_pdf = None   
 
 if "memory" not in st.session_state:
     st.session_state.memory = get_memory()
 
 uploaded_file = st.file_uploader("Upload a PDF", type="pdf")
+if uploaded_file:
+
+    if st.session_state.current_pdf != uploaded_file.name:
+        st.session_state.messages = []
+        st.session_state.memory = get_memory()
+        st.session_state.current_pdf = uploaded_file.name
 
 if uploaded_file:
 
@@ -141,7 +148,7 @@ if uploaded_file:
 
         chunks = split_text(pages)
 
-        unique_db_path = f"./chroma_db_{uuid.uuid4()}"
+        unique_db_path = None
 
         vector_store = create_vector_store(
             chunks,
@@ -162,12 +169,11 @@ if uploaded_file:
     st.divider()
 
     # TABS
-    tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(
+    tab1, tab2, tab3, tab4, tab5= st.tabs(
     [
         "💬 Legal Chat",
         "⚠️ Risk Analysis",
         "📝 Document Summary",
-        "📊 Risk Scoring",
         "📑 Clause Extraction",
         "⚖️ Contract Comparison"
     ]
@@ -280,63 +286,11 @@ if uploaded_file:
                 except Exception as e:
                     st.error(f"Failed to communicate with API: {e}")
 
-    # ==========================================
-    # TAB 4: RISK SCORING
-    # ==========================================
-    with tab4:
-        st.subheader("AI Risk Scoring")
-
-        if st.button("Generate Risk Score"):
-            context = "\n\n".join([doc.page_content for doc in chunks[:3]])
-            text = context.lower()
-
-            risk_score = 0
-            risks = []
-
-            # Rule-based processing logic
-            if "unlimited liability" in text:
-                risk_score += 3
-                risks.append("Unlimited liability clause detected")
-            if "termination" not in text:
-                risk_score += 2
-                risks.append("Termination clause missing")
-            if "confidentiality" not in text:
-                risk_score += 1
-                risks.append("Confidentiality clause missing")
-            if "indemnify" in text:
-                risk_score += 2
-                risks.append("Indemnity obligations detected")
-            if "arbitration" not in text:
-                risk_score += 1
-                risks.append("Dispute resolution clause missing")
-
-            risk_score = min(risk_score, 10)
-            risk_score_prompt = build_risk_score_prompt(context)
-
-            with st.spinner("Calculating risk score..."):
-                try:
-                    api_response = requests.post(
-                        "http://127.0.0.1:8000/chat",
-                        json={"question": risk_score_prompt}
-                    )
-                    risk_score_response = api_response.json()["response"]
-                except Exception as e:
-                    risk_score_response = f"Failed to get AI evaluation: {e}"
-
-            st.write(f"### Risk Score: {risk_score}/10")
-
-            if risks:
-                st.write("### Detected Risks")
-                for risk in risks:
-                    st.write(f"- {risk}")
-
-            st.divider()
-            st.markdown(risk_score_response)
 
     # ==========================================
     # TAB 5: CLAUSE EXTRACTION
     # ==========================================
-    with tab5:
+    with tab4:
         st.subheader("Clause Extraction")
 
         clause_type = st.selectbox(
@@ -364,7 +318,7 @@ if uploaded_file:
         # ==========================================
     # TAB 6: CONTRACT COMPARISON
     # ==========================================
-    with tab6:
+    with tab5:
 
         st.subheader("Compare Two Contracts")
 
