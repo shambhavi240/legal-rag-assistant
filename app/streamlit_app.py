@@ -278,7 +278,7 @@ if uploaded_file:
             with st.spinner("Generating summary..."):
                 try:
                     api_response = requests.post(
-                        "https://legal-rag-assistant-1-yokm.onrender.com",
+                        "https://legal-rag-assistant-1-yokm.onrender.com/chat",
                         json={"question": summary_prompt}
                     )
                     summary_response = api_response.json()["response"]
@@ -399,7 +399,7 @@ Provide clean bullet points.
 """
 
                         api_response = requests.post(
-                            "https://legal-rag-assistant-1-yokm.onrender.com/chat",
+                            "http://127.0.0.1:8000/chat",
                             json={"question": comparison_prompt}
                         )
 
