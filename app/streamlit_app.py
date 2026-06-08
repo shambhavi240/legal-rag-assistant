@@ -206,7 +206,7 @@ if uploaded_file:
             # RAG Pipeline execution
             results = retrieve_documents(vector_store, query)
             context = "\n\n".join([doc.page_content for doc in results])
-            prompt = build_prompt(context, query)
+            prompt = build_chat_prompt(context, query)
 
             with st.spinner("Thinking..."):
                 try:
