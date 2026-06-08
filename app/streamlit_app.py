@@ -12,7 +12,7 @@ from text_splitter import split_text
 from embeddings import get_embedding_model
 from vector_store import create_vector_store
 from retriever import retrieve_documents
-from prompt import build_prompt
+from prompt import build_chat_prompt
 from risk_detector import build_risk_prompt
 from memory import get_memory
 from clause_classifier import classify_clause
