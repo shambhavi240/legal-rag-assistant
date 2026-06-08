@@ -3,7 +3,7 @@ from pydantic import BaseModel
 
 from app.llm import get_llm
 
-from app.prompts import (
+from app.prompt import (
     build_chat_prompt,
     build_summary_prompt,
     build_risk_prompt,
