@@ -3,12 +3,11 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 
 from llm import get_llm
+
+app = FastAPI()
 @app.get("/")
 def home():
     return {"message": "Legal RAG Backend Running"}
-
-app = FastAPI()
-
 
 llm = get_llm()
 
