@@ -2,7 +2,7 @@ from fastapi import FastAPI
 
 from pydantic import BaseModel
 
-from app.llm import get_llm
+from llm import get_llm
 
 
 app = FastAPI()
