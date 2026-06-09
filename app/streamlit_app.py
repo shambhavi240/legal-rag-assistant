@@ -29,87 +29,156 @@ st.set_page_config(
     page_icon="⚖️",
     layout="wide"
 )
+st.markdown("""
+<div style='margin-bottom:25px'>
+<h1>⚖️ Legal AI Assistant</h1>
+<p style='font-size:18px;color:#94A3B8'>
+Analyze contracts, detect risks, generate summaries and perform semantic legal search using AI.
+</p>
+</div>
+""", unsafe_allow_html=True)
 
 # CUSTOM UI STYLING
-st.markdown(
-    """
-    <style>
-    .stApp {
-        background-color: #0F172A;
-        color: white;
-    }
+st.markdown("""
+<style>
 
-    h1, h2, h3, h4, h5, h6, p, label {
-        color: white !important;
-    }
+/* Main App */
+.stApp {
+    background: linear-gradient(135deg, #0B1120 0%, #0F172A 100%);
+    color: white;
+}
 
-    .stMarkdown,
-    .stMarkdown p,
-    .stMarkdown li,
-    .stMarkdown span {
-        color: white !important;
-    }
+/* Text */
+h1, h2, h3, h4, h5, h6, p, label {
+    color: white !important;
+}
 
-    section[data-testid="stSidebar"] {
-        background-color: #111827;
-    }
+/* Main Header */
+h1 {
+    font-size: 3rem !important;
+    font-weight: 800 !important;
+    background: linear-gradient(90deg, #60A5FA, #34D399);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-    section[data-testid="stSidebar"] * {
-        color: white !important;
-    }
+/* Sidebar */
+section[data-testid="stSidebar"] {
+    background: #111827;
+    border-right: 1px solid rgba(255,255,255,0.08);
+}
 
-    .stButton button {
-        width: 100%;
-        border-radius: 12px;
-        height: 3em;
-        background: linear-gradient(90deg, #2563EB, #1D4ED8);
-        color: white;
-        border: none;
-        font-size: 16px;
-        font-weight: bold;
-    }
+section[data-testid="stSidebar"] * {
+    color: white !important;
+}
 
-    .stButton button:hover {
-        background: linear-gradient(90deg, #1D4ED8, #1E40AF);
-        color: white;
-    }
+/* Upload Box */
+[data-testid="stFileUploader"] {
+    background: rgba(255,255,255,0.05);
+    border: 2px dashed #3B82F6;
+    border-radius: 18px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+}
 
-    .stChatMessage {
-        border-radius: 12px;
-        padding: 12px;
-        margin-bottom: 10px;
-        background-color: #1E293B;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+[data-testid="stFileUploader"]:hover {
+    border-color: #60A5FA;
+    box-shadow: 0 0 20px rgba(59,130,246,0.4);
+}
+
+/* Buttons */
+.stButton button {
+    width: 100%;
+    border-radius: 14px;
+    height: 3.2em;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #2563EB, #3B82F6);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.stButton button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37,99,235,0.4);
+}
+
+/* Chat Messages */
+.stChatMessage {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    padding: 16px;
+    margin-bottom: 12px;
+    backdrop-filter: blur(10px);
+}
+
+/* Input Box */
+.stTextInput input {
+    border-radius: 12px !important;
+    border: 1px solid rgba(255,255,255,0.15) !important;
+    background: rgba(255,255,255,0.05) !important;
+    color: white !important;
+}
+
+/* Cards */
+div[data-testid="stVerticalBlock"] > div:has(.element-container) {
+    border-radius: 18px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3B82F6;
+    border-radius: 20px;
+}
+
+</style>
+""", unsafe_allow_html=True)
 
 # SIDEBAR
-st.sidebar.markdown(
-    """
-    # ⚖️ Legal AI Dashboard
+st.sidebar.markdown("""
+# ⚖️ Legal AI
 
-    ### Features
+### 🚀 Features
 
-    ✅ Legal Q&A
+✅ Legal Q&A
 
-    ✅ Risk Analysis
+✅ Risk Detection
 
-    ✅ Document Summarization
+✅ Contract Summarization
 
-    ✅ Semantic Search
+✅ Semantic Search
 
-    ---
+---
 
-    Built using:
+### 🛠 Tech Stack
 
-    - FastAPI
-    - LangChain
-    - ChromaDB
-    - Groq LLM
-    """
-)
+• FastAPI
+
+• LangChain
+
+• ChromaDB
+
+• Groq LLM
+
+• Streamlit
+
+---
+
+### 💡 Tip
+
+Upload a legal PDF and ask:
+> "Summarize this agreement"
+
+> "Identify risky clauses"
+
+> "What is the termination notice period?"
+""")
 
 # SESSION STATE INITIALIZATION
 if "messages" not in st.session_state:
