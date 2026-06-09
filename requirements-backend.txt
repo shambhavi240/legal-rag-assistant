@@ -6,4 +6,5 @@ langchain-core
 langchain-groq
 pydantic
 groq
+torch
 torchvision
