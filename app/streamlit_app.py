@@ -156,49 +156,6 @@ text-align:center;
 </div>
 """, unsafe_allow_html=True)
 
-#Stats Cards
-
-col1, col2, col3 = st.columns(3)
-
-with col1:
-    st.markdown("""
-    <div style="
-    background:#1E293B;
-    padding:20px;
-    border-radius:16px;
-    text-align:center;
-    ">
-    <h3>📄</h3>
-    <h4>📄 Document Summary</h4>
-    </div>
-    """, unsafe_allow_html=True)
-
-with col2:
-    st.markdown("""
-    <div style="
-    background:#1E293B;
-    padding:20px;
-    border-radius:16px;
-    text-align:center;
-    ">
-    <h3>⚠️</h3>
-    <h4>⚠️ Risk Analysis</h4>
-    </div>
-    """, unsafe_allow_html=True)
-
-with col3:
-    st.markdown("""
-    <div style="
-    background:#1E293B;
-    padding:20px;
-    border-radius:16px;
-    text-align:center;
-    ">
-    <h3>🧠</h3>
-    <h4>⚖️ Contract Comparison
-    </h4>
-    </div>
-    """, unsafe_allow_html=True)
 # SIDEBAR
 st.sidebar.markdown("""
 # ⚖️ Legal AI
