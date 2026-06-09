@@ -170,7 +170,7 @@ with col1:
     text-align:center;
     ">
     <h3>📄</h3>
-    <h3>PDF Analysis</h3>
+    <h4>PDF Analysis</h4>
     </div>
     """, unsafe_allow_html=True)
 
@@ -183,7 +183,7 @@ with col2:
     text-align:center;
     ">
     <h3>⚠️</h3>
-    <h2>Risk Detection</h2>
+    <h4>Risk Detection</h4>
     </div>
     """, unsafe_allow_html=True)
 
@@ -196,7 +196,7 @@ with col3:
     text-align:center;
     ">
     <h3>🧠</h3>
-    <h2>AI Insights</h2>
+    <h4>AI Insights</h4>
     </div>
     """, unsafe_allow_html=True)
 # SIDEBAR
