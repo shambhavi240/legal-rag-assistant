@@ -211,8 +211,8 @@ if uploaded_file:
             with st.spinner("Thinking..."):
                 try:
                     api_response = requests.post(
-    "https://legal-rag-assistant-2-hbcr.onrender.com",
-    json={"question": prompt},
+    "https://legal-rag-assistant-2-hbcr.onrender.com/chat",
+    json={"question": query},
     timeout=120
 )
                     # FIXED: Changed from raise_for_error() to raise_for_status()
@@ -256,15 +256,14 @@ if uploaded_file:
 
             with st.spinner("Analyzing risks..."):
                 try:
-                    api_response = requests.post(
-                        "https://legal-rag-assistant-h7k0.onrender.com/chat",
-                        json={"question": risk_prompt}
-                    )
-                    risk_response = api_response.json()["response"]
-                    st.markdown(risk_response)
+                     api_response = requests.post(
+    "https://legal-rag-assistant-2-hbcr.onrender.com/chat",
+                    json={"question": risk_prompt},
+                    timeout=120)
+                     risk_response = api_response.json()["response"]
+                     st.markdown(risk_response)
                 except Exception as e:
                     st.error(f"Failed to communicate with API: {e}")
-
     # ==========================================
     # TAB 3: SUMMARY
     # ==========================================
@@ -278,9 +277,10 @@ if uploaded_file:
             with st.spinner("Generating summary..."):
                 try:
                     api_response = requests.post(
-                        "https://legal-rag-assistant-1-yokm.onrender.com/chat",
-                        json={"question": summary_prompt}
-                    )
+    "https://legal-rag-assistant-2-hbcr.onrender.com/chat",
+    json={"question": summary_prompt},
+    timeout=120
+)
                     summary_response = api_response.json()["response"]
                     st.markdown(summary_response)
                 except Exception as e:
@@ -399,7 +399,7 @@ Provide clean bullet points.
 """
 
                         api_response = requests.post(
-                            "http://127.0.0.1:8000/chat",
+                             "https://legal-rag-assistant-2-hbcr.onrender.com/chat",
                             json={"question": comparison_prompt}
                         )
 
