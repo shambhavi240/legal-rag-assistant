@@ -238,23 +238,15 @@ Upload a legal PDF and ask:
 
 > "What is the termination notice period?"
 """)
-# upload box
+st.markdown("""
+<br><br>
+<hr style="border:1px solid #334155">
 
-[data-testid="stFileUploader"] {
-    background: rgba(255,255,255,0.05);
-    border: 2px dashed #60A5FA;
-    border-radius: 20px;
-    padding: 25px;
-    box-shadow: 0 8px 20px rgba(59,130,246,0.15);
-}
-#footer
-[data-testid="stFileUploader"] {
-    background: rgba(255,255,255,0.05);
-    border: 2px dashed #60A5FA;
-    border-radius: 20px;
-    padding: 25px;
-    box-shadow: 0 8px 20px rgba(59,130,246,0.15);
-}
+<div style='text-align:center; color:#94A3B8; padding:10px'>
+⚖️ Legal AI Assistant • Powered by FastAPI, LangChain & Groq
+</div>
+""", unsafe_allow_html=True)
+
 
 # SESSION STATE INITIALIZATION
 if "messages" not in st.session_state:
