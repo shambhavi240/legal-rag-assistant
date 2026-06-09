@@ -30,7 +30,7 @@ st.set_page_config(
     layout="wide"
 )
 st.markdown("""
-<div style='margin-bottom:25px'>
+<div style='margin-bottom:15px'>
 <h1>⚖️ Legal AI Assistant</h1>
 <p style='font-size:18px;color:#94A3B8'>
 Analyze contracts, detect risks, generate summaries and perform semantic legal search using AI.
@@ -55,7 +55,7 @@ h1, h2, h3, h4, h5, h6, p, label {
 
 /* Main Header */
 h1 {
-    font-size: 3rem !important;
+    font-size: t;
     font-weight: 800 !important;
     background: linear-gradient(90deg, #60A5FA, #34D399);
     -webkit-background-clip: text;
@@ -143,8 +143,8 @@ div[data-testid="stVerticalBlock"] > div:has(.element-container) {
 st.markdown("""
 <div style="
 background: linear-gradient(135deg, #2563EB, #0EA5E9);
-padding:35px;
-border-radius:20px;
+padding:20px;
+border-radius:15px;
 margin-bottom:25px;
 box-shadow:0 10px 30px rgba(37,99,235,0.3);
 ">
@@ -170,7 +170,7 @@ with col1:
     text-align:center;
     ">
     <h3>📄</h3>
-    <h2>PDF Analysis</h2>
+    <h3>PDF Analysis</h3>
     </div>
     """, unsafe_allow_html=True)
 
