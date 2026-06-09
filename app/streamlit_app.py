@@ -143,17 +143,16 @@ div[data-testid="stVerticalBlock"] > div:has(.element-container) {
 st.markdown("""
 <div style="
 background: linear-gradient(135deg, #2563EB, #0EA5E9);
-padding:20px;
-border-radius:15px;
-margin-bottom:25px;
-box-shadow:0 10px 30px rgba(37,99,235,0.3);
+padding:16px;
+border-radius:16px;
+margin-bottom:15px;
+text-align:center;
 ">
-<h1 style="color:white;margin-bottom:10px;">
-⚖️ Legal AI Assistant
-</h1>
-<p style="color:#E2E8F0;font-size:18px;">
-Analyze Contracts • Detect Risks • Generate Summaries • Semantic Search
-</p>
+
+<h3 style="color:white;">
+📄 Upload • ⚠️ Analyze • ⚖️ Compare • 💬 Chat
+</h3>
+
 </div>
 """, unsafe_allow_html=True)
 
@@ -170,7 +169,7 @@ with col1:
     text-align:center;
     ">
     <h3>📄</h3>
-    <h4>PDF Analysis</h4>
+    <h4>📄 Document Summary</h4>
     </div>
     """, unsafe_allow_html=True)
 
@@ -183,7 +182,7 @@ with col2:
     text-align:center;
     ">
     <h3>⚠️</h3>
-    <h4>Risk Detection</h4>
+    <h4>⚠️ Risk Analysis</h4>
     </div>
     """, unsafe_allow_html=True)
 
@@ -196,7 +195,8 @@ with col3:
     text-align:center;
     ">
     <h3>🧠</h3>
-    <h4>AI Insights</h4>
+    <h4>⚖️ Contract Comparison
+    </h4>
     </div>
     """, unsafe_allow_html=True)
 # SIDEBAR
@@ -205,13 +205,15 @@ st.sidebar.markdown("""
 
 ### 🚀 Features
 
-✅ Legal Q&A
+💬 Legal Chat
 
-✅ Risk Detection
+⚠️ Risk Analysis
 
-✅ Contract Summarization
+📄 Document Summary
 
-✅ Semantic Search
+📑 Clause Extraction
+
+⚖️ Contract Comparison
 
 ---
 
@@ -229,14 +231,17 @@ st.sidebar.markdown("""
 
 ---
 
-### 💡 Tip
+### 💡 Sample Questions
 
-Upload a legal PDF and ask:
-> "Summarize this agreement"
+• Summarize this agreement
 
-> "Identify risky clauses"
+• Identify risky clauses
 
-> "What is the termination notice period?"
+• Extract important clauses
+
+• Compare two contracts
+
+• What is the termination notice period?
 """)
 st.markdown("""
 <br><br>
