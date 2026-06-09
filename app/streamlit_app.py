@@ -139,7 +139,66 @@ div[data-testid="stVerticalBlock"] > div:has(.element-container) {
 
 </style>
 """, unsafe_allow_html=True)
+# Hero Banner
+st.markdown("""
+<div style="
+background: linear-gradient(135deg, #2563EB, #0EA5E9);
+padding:35px;
+border-radius:20px;
+margin-bottom:25px;
+box-shadow:0 10px 30px rgba(37,99,235,0.3);
+">
+<h1 style="color:white;margin-bottom:10px;">
+⚖️ Legal AI Assistant
+</h1>
+<p style="color:#E2E8F0;font-size:18px;">
+Analyze Contracts • Detect Risks • Generate Summaries • Semantic Search
+</p>
+</div>
+""", unsafe_allow_html=True)
 
+#Stats Cards
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.markdown("""
+    <div style="
+    background:#1E293B;
+    padding:20px;
+    border-radius:16px;
+    text-align:center;
+    ">
+    <h3>📄</h3>
+    <h2>PDF Analysis</h2>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col2:
+    st.markdown("""
+    <div style="
+    background:#1E293B;
+    padding:20px;
+    border-radius:16px;
+    text-align:center;
+    ">
+    <h3>⚠️</h3>
+    <h2>Risk Detection</h2>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col3:
+    st.markdown("""
+    <div style="
+    background:#1E293B;
+    padding:20px;
+    border-radius:16px;
+    text-align:center;
+    ">
+    <h3>🧠</h3>
+    <h2>AI Insights</h2>
+    </div>
+    """, unsafe_allow_html=True)
 # SIDEBAR
 st.sidebar.markdown("""
 # ⚖️ Legal AI
@@ -179,6 +238,23 @@ Upload a legal PDF and ask:
 
 > "What is the termination notice period?"
 """)
+# upload box
+
+[data-testid="stFileUploader"] {
+    background: rgba(255,255,255,0.05);
+    border: 2px dashed #60A5FA;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(59,130,246,0.15);
+}
+#footer
+[data-testid="stFileUploader"] {
+    background: rgba(255,255,255,0.05);
+    border: 2px dashed #60A5FA;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(59,130,246,0.15);
+}
 
 # SESSION STATE INITIALIZATION
 if "messages" not in st.session_state:
