@@ -1,6 +1,6 @@
 # ⚖️ Legal RAG Assistant
 # Live Application:
-https://your-streamlit-app.streamlit.app
+https://legal-rag-assistant-2u67qpgstutvjmiwdmfyxv.streamlit.app/
 
 ## Overview
 
@@ -142,8 +142,10 @@ https://legal-rag-assistant-2-hbcr.onrender.com/docs
 
 ```text
 https://legal-rag-assistant-2-hbcr.onrender.com
+```
 
-### Frontend
+ ### GitHub Repository
+
 ```text
 https://github.com/shambhavi240/legal-rag-assistant
 ```
@@ -213,7 +215,7 @@ The executive's retirement date is March 31, 2023.
 
 ## Author
 
-Siddhi Shahi
+Shambhavi Shahi
 
 Computer Science Engineering Student
 
