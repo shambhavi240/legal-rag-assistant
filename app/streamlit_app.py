@@ -211,7 +211,7 @@ if uploaded_file:
             with st.spinner("Thinking..."):
                 try:
                     api_response = requests.post(
-    "https://legal-rag-assistant-2-hbcr.onrender.com,
+    "https://legal-rag-assistant-2-hbcr.onrender.com",
     json={"question": prompt},
     timeout=120
 )
