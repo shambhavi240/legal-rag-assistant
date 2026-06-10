@@ -49,13 +49,12 @@ st.markdown("""
 }
 
 /* Text */
-h1, h2, h3, h4, h5, h6,
+h1, h2, h3, h4, h5, h6 {
+    color: white !important;
+}
+
 p,
-label,
-li,
-ol,
-ul,
-span {
+label {
     color: white !important;
 }
 
@@ -141,6 +140,26 @@ div[data-testid="stVerticalBlock"] > div:has(.element-container) {
 ::-webkit-scrollbar-thumb {
     background: #3B82F6;
     border-radius: 20px;
+}
+
+</style>
+""", unsafe_allow_html=True)
+st.markdown("""
+<style>
+
+/* Selectbox */
+.stSelectbox div[data-baseweb="select"] * {
+    color: black !important;
+}
+
+/* Dropdown menu */
+div[role="listbox"] div {
+    color: black !important;
+}
+
+/* Text area */
+textarea {
+    color: black !important;
 }
 
 </style>
