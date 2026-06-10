@@ -1,6 +1,8 @@
 # ⚖️ Legal RAG Assistant
 # Live Application:
 https://legal-rag-assistant-2u67qpgstutvjmiwdmfyxv.streamlit.app/
+# Demo link:
+https://youtu.be/Qi6MaZlhO1A
 
 ## Overview
 
